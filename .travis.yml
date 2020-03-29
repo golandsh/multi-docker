@@ -19,4 +19,4 @@ after_success:
   - docker push golandsh/multi-client
   - docker push golandsh/multi-nginx
   - docker push golandsh/multi-server
-   -docker push golandsh/multi-worker
+  - docker push golandsh/multi-worker
