@@ -8,9 +8,9 @@ class Fib extends Component {
     index: ''
   };
 
-  componentDidMount() {
-    this.fetchValues();
-    this.fetchIndexes();
+  async componentDidMount() {
+    await this.fetchValues();
+    await this.fetchIndexes();
   }
 
   async fetchValues() {
@@ -19,9 +19,8 @@ class Fib extends Component {
   }
 
   async fetchIndexes() {
-    let x = 1;
-    //const seenIndexes = await axios.get('/api/values/all');
-    //this.setState({ seenIndexes: Array.from(seenIndexes.data) });
+    const seenIndexes = await axios.get('/api/values/all');
+    this.setState({ seenIndexes: Array.from(seenIndexes.data) });
   }
 
   handleSubmit = async (event) => {
